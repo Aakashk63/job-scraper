@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+apscheduler
+requests
+beautifulsoup4
+gspread
+oauth2client
+pydantic
