@@ -4,22 +4,6 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-import google.generativeai as genai
-from pydantic import BaseModel, Field
-
-# Ensure you have your API key set in the environment or passed directly
-# genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-class JobDetails(BaseModel):
-    company_name: str = Field(description="Hiring company name clearly.")
-    category: str = Field(description="e.g. IT, Software, Core, Finance, BPO, Internship, Government, Work From Home")
-    location: str = Field(description="Return exact city/state if available.")
-    last_date_to_apply: str = Field(description="If not available return ASAP")
-    batch: str = Field(description="e.g. 2021 / 2022 / 2023 / 2024 / 2025, Any Batch")
-    qualification: str = Field(description="e.g. BE / BTech / MCA, Any Degree, Freshers Only, 0-1 Years")
-    required_skills: str = Field(description="Extract technologies/tools like: Python, Java, SQL, Excel, Communication, React, AWS etc.")
-    apply_link: str = Field(description="Direct application link.")
-    job_type: str = Field(description="Mention: Job or Internship")
 
 def clean_html(raw_html):
     soup = BeautifulSoup(raw_html, "html.parser")
