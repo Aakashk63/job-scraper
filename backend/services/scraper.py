@@ -99,8 +99,8 @@ def extract_job_info(html_content, title, url):
         return None
 
 def fetch_latest_jobs():
-    # Increased per_page from 15 to 100 to fetch more jobs at once
-    wp_url = "https://freshershunt.in/wp-json/wp/v2/posts?per_page=100"
+    # Reduced per_page to 20 to speed up API response
+    wp_url = "https://freshershunt.in/wp-json/wp/v2/posts?per_page=20"
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     
     # Mock data to showcase Creative and Web Dev roles since freshershunt lacks them
